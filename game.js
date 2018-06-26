@@ -30,6 +30,10 @@ $(document).ready(function() {
   meterPressAudio.muted = false;
   meterPressAudio.volume = 1.0;
 
+  var discDriveAudio = document.getElementById("disc-drive-audio");
+  discDriveAudio.muted = false;
+  discDriveAudio.volume = 0.5;
+
   var chainHitAudio = document.getElementById("chain-hit-audio");
   chainHitAudio.muted = false;
   chainHitAudio.volume = 0.5;
@@ -79,6 +83,8 @@ $(document).ready(function() {
       backhandShotAnimation();
 
       setTimeout(function() {
+        discDriveAudio.muted = false;
+        discDriveAudio.play();
         playerShot();
       }, 1340);
 
@@ -427,6 +433,8 @@ $(document).ready(function() {
     backhandShotAnimation();
 
     setTimeout(function() {
+      discDriveAudio.muted = false;
+      discDriveAudio.play();
       playerShot();
     }, 1340);
 
