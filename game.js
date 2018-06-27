@@ -34,6 +34,10 @@ $(document).ready(function() {
   discDriveAudio.muted = false;
   discDriveAudio.volume = 0.5;
 
+  var waterHitAudio = document.getElementById("water-hit-audio");
+  waterHitAudio.muted = false;
+  waterHitAudio.volume = 1.0;
+
   var chainHitAudio = document.getElementById("chain-hit-audio");
   chainHitAudio.muted = false;
   chainHitAudio.volume = 0.5;
@@ -50,6 +54,8 @@ $(document).ready(function() {
   var $powerIndicator = $("#power-indicator");
   var $indicatorTrail = $("#indicator-trail");
   var $indicatorGhost = $("#indicator-ghost");
+
+  var $obWater = $("#OB");
 
   var indicatorGhostPositionX = 0;
   var spaceBarPress = 0;
@@ -177,6 +183,19 @@ $(document).ready(function() {
       $discShadow.addClass("disc-shot-end");
       $discShadow.css({"transform": "translateY(" + shotLength1 + "px)"});
       $discContainer.css({"transform": "translateX(" + shotWidth2 + "px)"});
+
+      setTimeout(function() {
+        /* console.log($obWater.offset());
+        console.log($disc.offset()); */
+        if($disc.offset().top >= 143 && $disc.offset().left <= 517) {
+          console.log("OB WATER!!!");
+          waterHitAudio.muted = false;
+          waterHitAudio.play();
+          $disc.addClass("hidden");
+          $discShadow.addClass("hidden");
+        }
+      }, 1300);
+
     }, 1200);
   }
 

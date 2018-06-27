@@ -10,6 +10,18 @@
   display: none;
 }
 
+#OB {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 93px;
+  width: 380px;
+  height: 254px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid red;
+  z-index: 1;
+}
+
 #basket {
   position: absolute;
   left: -16px;
