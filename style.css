@@ -10,7 +10,19 @@
   display: none;
 }
 
-#OB {
+#ob-zone-0 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0px;
+  width: 230px;
+  height: 91px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid red;
+  z-index: 1;
+}
+
+#ob-zone-1 {
   position: absolute;
   left: 0;
   right: 0;

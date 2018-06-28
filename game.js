@@ -55,7 +55,7 @@ $(document).ready(function() {
   var $indicatorTrail = $("#indicator-trail");
   var $indicatorGhost = $("#indicator-ghost");
 
-  var $obWater = $("#OB");
+  var $obZone = $("#ob-zone-0");
 
   var indicatorGhostPositionX = 0;
   var spaceBarPress = 0;
@@ -162,6 +162,28 @@ $(document).ready(function() {
     }, 2520);
   }
 
+  function OB_WaterHit() {
+    console.log("OB WATER!!!");
+    waterHitAudio.muted = false;
+    waterHitAudio.play();
+
+    $disc.addClass("hidden");
+    $discShadow.addClass("hidden");
+  }
+
+
+  function checkDiscOB() {
+    /* console.log($obZone.offset()); */
+    console.log($disc.offset());
+
+    if($disc.offset().top <= 142 && $disc.offset().left <= 367) {
+      OB_WaterHit();
+    }
+    else if($disc.offset().top >= 143 && $disc.offset().left <= 517) {
+      OB_WaterHit();
+    }
+  }
+
 
   function shotStep() {
     $disc.addClass("disc-shot");
@@ -185,17 +207,8 @@ $(document).ready(function() {
       $discContainer.css({"transform": "translateX(" + shotWidth2 + "px)"});
 
       setTimeout(function() {
-        /* console.log($obWater.offset());
-        console.log($disc.offset()); */
-        if($disc.offset().top >= 143 && $disc.offset().left <= 517) {
-          console.log("OB WATER!!!");
-          waterHitAudio.muted = false;
-          waterHitAudio.play();
-          $disc.addClass("hidden");
-          $discShadow.addClass("hidden");
-        }
+        checkDiscOB();
       }, 1300);
-
     }, 1200);
   }
 
