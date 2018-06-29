@@ -18,9 +18,23 @@
   width: 230px;
   height: 91px;
   background-color: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
   border: 1px solid red;
   z-index: 1;
 }
+
+/* #ob-zone-0:after {
+  content: "";
+  position: absolute;
+  left: 230px;
+  right: 0;
+  top: 70px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid yellow;
+  z-index: 1;
+} */
 
 #ob-zone-1 {
   position: absolute;
@@ -99,6 +113,19 @@
   /* border: 1px solid black; */
 }
 
+/* #disc-container:after {
+  content: "";
+  position: absolute;
+  left: -159px;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  z-index: 1;
+  border: 1px solid black;
+} */
+
 #disc {
   position: absolute;
   left: 0;
@@ -111,6 +138,20 @@
   background-repeat: no-repeat;
   z-index: 1;
 }
+
+/* #disc:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1527429339/DG-GAME-PROTO/disc-16x16_wi4gex.png");
+  background-repeat: no-repeat;
+  z-index: 1;
+} */
 
 .disc-shot {
   transition: transform 2200ms ease-out;
