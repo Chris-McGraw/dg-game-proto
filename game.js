@@ -177,11 +177,20 @@ $(document).ready(function() {
     discPositionY = Math.floor($disc.position().top);
 
     /* console.log($obZone.position());
-    console.log("disc top: " + discPositionY);
-    console.log("disc container left: " + discPositionX); */
+    console.log("disc top: " + discPositionY); */
+    console.log("disc container left: " + discPositionX);
 
-  /* ----- OB ZONE 0 ----- */
+  /* ----------- OB ZONE 0 ---------- */
     if(discPositionY <= -261 && discPositionX <= -75) {
+      OB_WaterHit();
+    }
+  /* ------ OB ZONE 0 : After ----- */
+    else if(discPositionY <= -261 && discPositionY >= -272 && discPositionX <= -54) {
+      OB_WaterHit();
+    }
+
+  /* ----------- OB ZONE 1 ---------- */
+    else if(discPositionY <= -3 && discPositionY >= -260 && discPositionX <= 71) {
       OB_WaterHit();
     }
   }
