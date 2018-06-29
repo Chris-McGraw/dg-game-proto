@@ -55,10 +55,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 93px;
-  width: 380px;
-  height: 254px;
+  top: 91px;
+  width: 381px;
+  height: 258px;
   background-color: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
   border: 1px solid red;
   z-index: 1;
 }
@@ -131,7 +132,7 @@
 /* #disc-container:after {
   content: "";
   position: absolute;
-  left: -114px;
+  left: 71px;
   right: 0;
 
   top: -262px;
@@ -146,7 +147,7 @@
 
 #container-pos-test {
   position: absolute;
-  left: -114px;
+  left: 144px;
   right: 0;
   top: 342px;
   width: 10px;
@@ -172,9 +173,9 @@
 /* #disc:after {
   content: "";
   position: absolute;
-  left: -114px;
+  left: 72px;
   right: 0;
-  top: -272px;
+  top: -3px;
   width: 10px;
   height: 10px;
   margin: auto;
