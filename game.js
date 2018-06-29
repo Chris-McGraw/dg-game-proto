@@ -173,16 +173,15 @@ $(document).ready(function() {
 
 
   function checkDiscOB() {
-    discPositionX = Math.floor($disc.offset().left);
-    discPositionY = Math.floor($disc.offset().top);
+    discPositionX = Math.floor($discContainer.position().left);
+    discPositionY = Math.floor($disc.position().top);
 
-    /* console.log($obZone.offset()); */
-    console.log($disc.offset());
+    /* console.log($obZone.position());
+    console.log("disc top: " + discPositionY);
+    console.log("disc container left: " + discPositionX); */
 
-    if(discPositionY <= 142 && discPositionX <= 367) {
-      OB_WaterHit();
-    }
-    else if(discPositionY >= 143 && discPositionX <= 517) {
+  /* ----- OB ZONE 0 ----- */
+    if(discPositionY <= -261 && discPositionX <= -75) {
       OB_WaterHit();
     }
   }
