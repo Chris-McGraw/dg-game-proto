@@ -173,9 +173,9 @@
 /* #disc:after {
   content: "";
   position: absolute;
-  left: 72px;
+  left: -114px;
   right: 0;
-  top: -3px;
+  top: -252px;
   width: 10px;
   height: 10px;
   margin: auto;

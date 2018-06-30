@@ -181,16 +181,16 @@ $(document).ready(function() {
     console.log("disc container left: " + discPositionX);
 
   /* ----------- OB ZONE 0 ---------- */
-    if(discPositionY <= -261 && discPositionX <= -75) {
+    if(discPositionY <= -252 && discPositionX <= -75) {
       OB_WaterHit();
     }
   /* ------ OB ZONE 0 : After ----- */
-    else if(discPositionY <= -261 && discPositionY >= -272 && discPositionX <= -54) {
+    else if(discPositionY <= -252 && discPositionY >= -271 && discPositionX <= -54) {
       OB_WaterHit();
     }
 
   /* ----------- OB ZONE 1 ---------- */
-    else if(discPositionY <= -3 && discPositionY >= -260 && discPositionX <= 71) {
+    else if(discPositionY <= -3 && discPositionY >= -251 && discPositionX <= 71) {
       OB_WaterHit();
     }
   }
