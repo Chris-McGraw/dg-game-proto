@@ -23,19 +23,19 @@
   z-index: 1;
 }
 
-/* #ob-zone-0:before {
+#ob-zone-0:before {
   content: "";
   position: absolute;
   left: 231px;
   right: 0;
-  top: 52px;
+  top: 50px;
   width: 10px;
-  height: 18px;
+  height: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
   z-index: 1;
-} */
+}
 
 #ob-zone-0:after {
   content: "";
@@ -147,9 +147,9 @@
 
 #container-pos-test {
   position: absolute;
-  left: 144px;
+  left: -134px;
   right: 0;
-  top: 342px;
+  top: 50px;
   width: 10px;
   height: 10px;
   margin: auto;
@@ -173,9 +173,9 @@
 /* #disc:after {
   content: "";
   position: absolute;
-  left: 72px;
+  left: -134px;
   right: 0;
-  top: -3px;
+  top: -291px;
   width: 10px;
   height: 10px;
   margin: auto;
