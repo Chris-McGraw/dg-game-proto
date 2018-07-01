@@ -201,6 +201,11 @@ $(document).ready(function() {
     else if(discPositionY <= -252 && discPositionY >= -261 && discPositionX <= -40) {
       OB_WaterHit();
     }
+
+  /* ----------- OB ZONE 2 ---------- */
+    else if(discPositionY <= -179 && discPositionY >= -219 && discPositionX <= 94) {
+      OB_WaterHit();
+    }
   }
 
 

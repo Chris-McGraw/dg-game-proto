@@ -14,7 +14,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0px;
+  top: 0;
   width: 232px;
   height: 91px;
   background-color: rgba(255, 255, 255, 0.4);
@@ -75,6 +75,19 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
+  z-index: 1;
+}
+
+#ob-zone-2 {
+  position: absolute;
+  left: 381px;
+  right: 0;
+  top: 123px;
+  width: 22px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  border: 1px solid red;
   z-index: 1;
 }
 
@@ -187,9 +200,9 @@
 /* #disc:after {
   content: "";
   position: absolute;
-  left: -81px;
+  left: 94px;
   right: 0;
-  top: -261px;
+  top: -219px;
   width: 10px;
   height: 10px;
   margin: auto;
