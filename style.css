@@ -96,9 +96,9 @@
   position: absolute;
   left: -1px;
   right: 0;
-  top: 49px;
+  top: 39px;
   width: 15px;
-  height: 10px;
+  height: 20px;
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
@@ -110,9 +110,9 @@
   position: absolute;
   left: -1px;
   right: 0;
-  top: 59px;
+  top: 49px;
   width: 10px;
-  height: 12px;
+  height: 22px;
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid yellow;
@@ -228,9 +228,9 @@
 /* #disc:after {
   content: "";
   position: absolute;
-  left: 87px;
+  left: 82px;
   right: 0;
-  top: -169px;
+  top: -174px;
   width: 10px;
   height: 10px;
   margin: auto;
