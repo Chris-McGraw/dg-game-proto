@@ -203,7 +203,11 @@ $(document).ready(function() {
     }
 
   /* ----------- OB ZONE 2 ---------- */
-    else if(discPositionY <= -179 && discPositionY >= -219 && discPositionX <= 94) {
+    else if(discPositionY <= -170 && discPositionY >= -219 && discPositionX <= 94) {
+      OB_WaterHit();
+    }
+  /* ----------- OB ZONE 2 : Before ---------- */
+    else if(discPositionY <= -160 && discPositionY >= -169 && discPositionX <= 87) {
       OB_WaterHit();
     }
   /* ----------- OB ZONE 2 : After ---------- */
