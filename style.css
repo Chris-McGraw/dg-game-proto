@@ -119,6 +119,19 @@
   z-index: 1;
 }
 
+#ob-zone-3 {
+  position: absolute;
+  left: 381px;
+  right: 0;
+  top: 251px;
+  width: 17px;
+  height: 63px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  border: 1px solid red;
+  z-index: 1;
+}
+
 #basket {
   position: absolute;
   left: -16px;
@@ -228,9 +241,9 @@
 /* #disc:after {
   content: "";
   position: absolute;
-  left: -134px;
+  left: 89px;
   right: 0;
-  top: -271px;
+  top: -38px;
   width: 10px;
   height: 10px;
   margin: auto;
