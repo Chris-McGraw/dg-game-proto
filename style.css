@@ -300,6 +300,18 @@
   background-repeat: no-repeat;
 }
 
+#disc-water-splash {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1530632532/DG-GAME-PROTO/splash-2.png");
+  background-repeat: no-repeat;
+}
+
 #screen-container {
   position: absolute;
   left: 0;

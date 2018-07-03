@@ -56,6 +56,7 @@ $(document).ready(function() {
   var $indicatorGhost = $("#indicator-ghost");
 
   var $obZone = $("#ob-zone-0");
+  var $discWaterSplash = $("#disc-water-splash");
 
   var indicatorGhostPositionX = 0;
   var spaceBarPress = 0;
@@ -168,7 +169,9 @@ $(document).ready(function() {
     waterHitAudio.play();
 
     $disc.addClass("hidden");
-    $discShadow.addClass("hidden");
+    /* $discShadow.addClass("hidden"); */
+
+    $discWaterSplash.removeClass("hidden");
   }
 
 
@@ -387,6 +390,9 @@ $(document).ready(function() {
       $disc.removeClass("disc-shot");
       $disc.removeAttr("style");
       $disc.removeClass("player-drive-movement");
+
+      $discWaterSplash.addClass("hidden");
+
       $discShadow.removeClass("hidden");
       $discShadow.removeClass("player-drive-movement");
       $discShadow.removeClass("disc-shot");
