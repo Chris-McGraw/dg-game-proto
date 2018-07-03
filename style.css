@@ -300,6 +300,16 @@
   background-repeat: no-repeat;
 }
 
+#disc-water-splash {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+
 #screen-container {
   position: absolute;
   left: 0;

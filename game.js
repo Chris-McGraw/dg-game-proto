@@ -14,6 +14,12 @@ var backhandShot8 = "https://res.cloudinary.com/dtwyohvli/image/upload/v15296840
 var backhandShot9 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529684066/DG-GAME-PROTO/backhand-drive-9.png";
 var backhandShot10 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529684066/DG-GAME-PROTO/backhand-drive-10.png";
 
+var splash0 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-GAME-PROTO/splash-0.png";
+var splash1 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-GAME-PROTO/splash-1.png";
+var splash2 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530632532/DG-GAME-PROTO/splash-2.png";
+var splash3 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-GAME-PROTO/splash-3.png";
+var splash4 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-GAME-PROTO/splash-4.png";
+
 $(document).ready(function() {
 
 /* ------------------------ Audio File Declarations ------------------------ */
@@ -56,6 +62,7 @@ $(document).ready(function() {
   var $indicatorGhost = $("#indicator-ghost");
 
   var $obZone = $("#ob-zone-0");
+  var $discWaterSplash = $("#disc-water-splash");
 
   var indicatorGhostPositionX = 0;
   var spaceBarPress = 0;
@@ -162,13 +169,47 @@ $(document).ready(function() {
     }, 2520);
   }
 
+
+  function waterSplashAnimation() {
+    setTimeout(function() {
+      $discWaterSplash.attr("src", splash0);
+    }, 0);
+
+    setTimeout(function() {
+      $discWaterSplash.attr("src", splash1);
+    }, 120);
+
+    setTimeout(function() {
+      $discWaterSplash.attr("src", splash2);
+    }, 240);
+
+    setTimeout(function() {
+      $discWaterSplash.attr("src", splash3);
+    }, 360);
+
+    setTimeout(function() {
+      $discWaterSplash.attr("src", splash4);
+    }, 480);
+
+    setTimeout(function() {
+      $discWaterSplash.addClass("hidden");
+    }, 600);
+  }
+
+
   function OB_WaterHit() {
     console.log("OB WATER!!!");
     waterHitAudio.muted = false;
     waterHitAudio.play();
 
     $disc.addClass("hidden");
-    $discShadow.addClass("hidden");
+    /* $discShadow.addClass("hidden"); */
+
+    $discShadow.css("visibility", "hidden");
+    $discWaterSplash.removeClass("hidden");
+    $discWaterSplash.css("visibility", "visible");
+
+    waterSplashAnimation();
   }
 
 
@@ -387,6 +428,10 @@ $(document).ready(function() {
       $disc.removeClass("disc-shot");
       $disc.removeAttr("style");
       $disc.removeClass("player-drive-movement");
+
+      $discWaterSplash.addClass("hidden");
+      $discShadow.css("visibility", "visible");
+
       $discShadow.removeClass("hidden");
       $discShadow.removeClass("player-drive-movement");
       $discShadow.removeClass("disc-shot");
