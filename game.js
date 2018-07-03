@@ -171,6 +171,8 @@ $(document).ready(function() {
     $disc.addClass("hidden");
     /* $discShadow.addClass("hidden"); */
 
+    $discShadow.css("visibility", "hidden");
+    $discWaterSplash.css("visibility", "visible");
     $discWaterSplash.removeClass("hidden");
   }
 
@@ -392,6 +394,7 @@ $(document).ready(function() {
       $disc.removeClass("player-drive-movement");
 
       $discWaterSplash.addClass("hidden");
+      $discShadow.css("visibility", "visible");
 
       $discShadow.removeClass("hidden");
       $discShadow.removeClass("player-drive-movement");
