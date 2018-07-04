@@ -171,9 +171,7 @@ $(document).ready(function() {
 
 
   function waterSplashAnimation() {
-    setTimeout(function() {
-      $discWaterSplash.attr("src", splash0);
-    }, 0);
+    $discWaterSplash.attr("src", splash0);
 
     setTimeout(function() {
       $discWaterSplash.attr("src", splash1);
@@ -203,13 +201,17 @@ $(document).ready(function() {
     waterHitAudio.play();
 
     $disc.addClass("hidden");
-    /* $discShadow.addClass("hidden"); */
-
     $discShadow.css("visibility", "hidden");
-    $discWaterSplash.removeClass("hidden");
-    $discWaterSplash.css("visibility", "visible");
 
-    waterSplashAnimation();
+    setTimeout(function() {
+      $discShadow.removeClass("player-drive-movement");
+      $discShadow.removeClass("disc-shot");
+      $discShadow.removeClass("disc-shot-end");
+      $discWaterSplash.removeClass("hidden");
+      $discWaterSplash.css("visibility", "visible");
+
+      waterSplashAnimation();
+    }, 0);
   }
 
 
@@ -446,7 +448,7 @@ $(document).ready(function() {
       shotLoopCount1 = 0;
       releaseLoopValue = 0;
       releaseLoopCount1 = 0;
-    }, 3000);
+    }, 4000);
   }
 
 
