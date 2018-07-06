@@ -439,3 +439,27 @@
   background-color: lightGray;
   z-index: 0;
 }
+
+#instruction-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 530px;
+  width: 508px;
+  height: 120px;
+  margin: auto;
+  /* border: 1px solid black;
+  border-radius: 10px; */
+}
+
+#instruction-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  width: 380px;
+  margin: auto;
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  text-align: center;
+}
