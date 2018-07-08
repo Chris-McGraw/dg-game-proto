@@ -160,6 +160,27 @@
   z-index: 1;
 }
 
+#shot-preview-pointer {
+  position: absolute;
+  left: -12px;
+  right: 0;
+  top: 20px;
+  margin: auto;
+  z-index: 2;
+}
+
+#screen-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  width: 608px;
+  height: 448px;
+  margin: auto;
+  background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1530045976/DG-GAME-PROTO/hole-test-sand-608x448.png");
+  border: 1px solid black;
+}
+
 #hole-info-container {
   position: absolute;
   top: 10px;
@@ -176,12 +197,6 @@
   text-align: center;
 }
 
-#feet-style {
-  position: relative;
-  top: -4px;
-  font-size: 12px;
-}
-
 #basket {
   position: absolute;
   left: -16px;
@@ -189,15 +204,6 @@
   top: 6px;
   margin: auto;
   z-index: 1;
-}
-
-#shot-preview-pointer {
-  position: absolute;
-  left: -12px;
-  right: 0;
-  top: 20px;
-  margin: auto;
-  z-index: 2;
 }
 
 #teepad {
@@ -332,28 +338,17 @@
   margin: auto;
 }
 
-#screen-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50px;
-  width: 608px;
-  height: 448px;
-  margin: auto;
-  background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1530045976/DG-GAME-PROTO/hole-test-sand-608x448.png");
-  border: 1px solid black;
-}
-
 #shot-UI-container {
   position: absolute;
   left: 0;
   right: 0;
   top: 397px;
-  width: 400px;
+  width: 608px;
   height: 50px;
   margin: auto;
 
-  /* border: 1px solid black; */
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
 }
 
 #shot-power-meter {

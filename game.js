@@ -2,6 +2,7 @@
 
 var basketEmptyImg = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529066967/DG-GAME-PROTO/basket-32x48_job1zn.png";
 var basketMadeDiscImg = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529066874/DG-GAME-PROTO/basket-made-disc-32x48_jg7qi4.png";
+
 var backhandShot0 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529506728/DG-GAME-PROTO/backhand-drive-0.png";
 var backhandShot1 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529683836/DG-GAME-PROTO/backhand-drive-1.png";
 var backhandShot2 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1529529600/DG-GAME-PROTO/backhand-drive-2.png";
@@ -19,6 +20,7 @@ var splash1 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-
 var splash2 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530632532/DG-GAME-PROTO/splash-2.png";
 var splash3 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-GAME-PROTO/splash-3.png";
 var splash4 = "https://res.cloudinary.com/dtwyohvli/image/upload/v1530639527/DG-GAME-PROTO/splash-4.png";
+
 
 $(document).ready(function() {
 
@@ -50,8 +52,10 @@ $(document).ready(function() {
 
 /* ------------------------- Variable Declarations ------------------------- */
 
-  var $basket = $("#basket");
+  var $obZone = $("#ob-zone-0");
+
   var $shotPreviewPointer = $("#shot-preview-pointer");
+  var $basket = $("#basket");
   var $playerSprite = $("#player-sprite");
   var $discTemp = $("#disc-temp");
   var $discContainer = $("#disc-container");
@@ -60,11 +64,9 @@ $(document).ready(function() {
   var $powerIndicator = $("#power-indicator");
   var $indicatorTrail = $("#indicator-trail");
   var $indicatorGhost = $("#indicator-ghost");
-
-  var $obZone = $("#ob-zone-0");
+  var indicatorGhostPositionX = 0;
   var $discWaterSplash = $("#disc-water-splash");
 
-  var indicatorGhostPositionX = 0;
   var spaceBarPress = 0;
   var shotLoopValue = 0;
   var shotPower = 0;
