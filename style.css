@@ -343,11 +343,12 @@
   left: 0;
   right: 0;
   top: 397px;
-  width: 400px;
+  width: 608px;
   height: 50px;
   margin: auto;
 
-  /* border: 1px solid black; */
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
 }
 
 #shot-power-meter {
