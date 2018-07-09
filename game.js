@@ -55,8 +55,8 @@ $(document).ready(function() {
   var $obZone = $("#ob-zone-0");
 
   var $previewPointerContainer = $("#preview-pointer-container");
-  var $shotPreviewPointer = $("#shot-preview-pointer");
-  var $shotPreviewPointer2 = $("#shot-preview-pointer-2");
+  var $shotPreviewPointerTop = $("#shot-preview-pointer-top");
+  var $shotPreviewPointerBottom = $("#shot-preview-pointer-bottom");
 
   var $basket = $("#basket");
   var $playerSprite = $("#player-sprite");
@@ -89,15 +89,15 @@ $(document).ready(function() {
 
   function shotPreviewBlink() {
     setTimeout(function() {
-      $shotPreviewPointer2.addClass("blink");
+      $shotPreviewPointerTop.addClass("blink");
 
       setTimeout(function() {
-        $shotPreviewPointer.addClass("blink");
+        $shotPreviewPointerBottom.addClass("blink");
       }, 500);
 
       setTimeout(function() {
-        $shotPreviewPointer.removeClass("blink");
-        $shotPreviewPointer2.removeClass("blink");
+        $shotPreviewPointerTop.removeClass("blink");
+        $shotPreviewPointerBottom.removeClass("blink");
       }, 1000);
 
       setTimeout(function() {

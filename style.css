@@ -169,20 +169,20 @@
   z-index: 2;
 }
 
-#shot-preview-pointer {
-  position: absolute;
-  left: -12px;
-  right: 0;
-  top: 20px;
-  margin: auto;
-  z-index: 2;
-}
-
-#shot-preview-pointer-2 {
+#shot-preview-pointer-top {
   position: absolute;
   left: -12px;
   right: 0;
   top: 13px;
+  margin: auto;
+  z-index: 2;
+}
+
+#shot-preview-pointer-bottom {
+  position: absolute;
+  left: -12px;
+  right: 0;
+  top: 20px;
   margin: auto;
   z-index: 2;
 }
