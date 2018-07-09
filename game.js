@@ -54,7 +54,10 @@ $(document).ready(function() {
 
   var $obZone = $("#ob-zone-0");
 
+  var $previewPointerContainer = $("#preview-pointer-container");
   var $shotPreviewPointer = $("#shot-preview-pointer");
+  var $shotPreviewPointer2 = $("#shot-preview-pointer-2");
+
   var $basket = $("#basket");
   var $playerSprite = $("#player-sprite");
   var $discTemp = $("#disc-temp");
@@ -79,10 +82,29 @@ $(document).ready(function() {
   var shotWidth2 = 0;
   var releaseLoopCount1 = 0;
 
-  var aimPointerPositionY = 20;
+  var aimPointerPositionY = 0;
   var aimPointerPositionX = 224;
 
 /* ------------------------- Function Declarations ------------------------- */
+
+  function shotPreviewBlink() {
+    setTimeout(function() {
+      $shotPreviewPointer2.addClass("blink");
+
+      setTimeout(function() {
+        $shotPreviewPointer.addClass("blink");
+      }, 500);
+
+      setTimeout(function() {
+        $shotPreviewPointer.removeClass("blink");
+        $shotPreviewPointer2.removeClass("blink");
+      }, 1000);
+
+      setTimeout(function() {
+        shotPreviewBlink();
+      }, 2000);
+    }, 100);
+  }
 
   function checkIndicatorPos() {
     if($powerIndicator.position().left === -27 && spaceBarPress === 2) {
@@ -312,7 +334,7 @@ $(document).ready(function() {
       if(shotPower >= (shotLoopValue - 6) && shotPower <= (shotLoopValue)) {
         console.log("shotLoopRange = " + (shotLoopValue - 6) + " & " + shotLoopValue);
 
-        $shotPreviewPointer.addClass("hidden");
+        $previewPointerContainer.addClass("hidden");
         $discContainer.css("z-index", "2");
 
       /* ------------ Good Release Early ------------ */
@@ -426,7 +448,7 @@ $(document).ready(function() {
   /* ----- Shot Reset Functionality ----- */
     setTimeout(function() {
       $basket.attr("src", basketEmptyImg);
-      $shotPreviewPointer.removeClass("hidden");
+      $previewPointerContainer.removeClass("hidden");
       $playerSprite.removeClass("player-drive-movement");
       $discTemp.removeClass("hidden");
       $discContainer.removeClass("disc-shot-end");
@@ -455,8 +477,8 @@ $(document).ready(function() {
       releaseLoopValue = 0;
       releaseLoopCount1 = 0;
 
-      $shotPreviewPointer.css("top", "20px");
-      aimPointerPositionY = 20;
+      $previewPointerContainer.css("top", "0px");
+      aimPointerPositionY = 0;
       $powerAimIndicator.css("left", "224px");
       aimPointerPositionX = 224;
     }, 4000);
@@ -583,19 +605,21 @@ $(document).ready(function() {
 
 /* ---------------------------- Event Handlers ---------------------------- */
 
+  /* shotPreviewBlink(); */
+
   $(document).keydown(function(event) {
   /* ----- Move Aim Pointer Down ----- */
-    if(event.which === 83 && aimPointerPositionY < 300 || event.which === 40 && aimPointerPositionY < 300) {
+    if(event.which === 83 && aimPointerPositionY < 280 || event.which === 40 && aimPointerPositionY < 280) {
       aimPointerPositionY += 10;
-      $shotPreviewPointer.css("top", aimPointerPositionY + "px");
+      $previewPointerContainer.css("top", aimPointerPositionY + "px");
   /* --- Power Aim Indicator Left --- */
       aimPointerPositionX -= 7;
       $powerAimIndicator.css("left", aimPointerPositionX + "px");
     }
   /* ----- Move Aim Pointer Up ----- */
-    if(event.which === 87 && aimPointerPositionY > 20 || event.which === 38 && aimPointerPositionY > 20) {
+    if(event.which === 87 && aimPointerPositionY > 0 || event.which === 38 && aimPointerPositionY > 0) {
       aimPointerPositionY -= 10;
-      $shotPreviewPointer.css("top", aimPointerPositionY + "px");
+      $previewPointerContainer.css("top", aimPointerPositionY + "px");
    /* --- Power Aim Indicator Right --- */
       aimPointerPositionX += 7;
       $powerAimIndicator.css("left", aimPointerPositionX + "px");

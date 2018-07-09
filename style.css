@@ -160,6 +160,15 @@
   z-index: 1;
 }
 
+#preview-pointer-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  z-index: 2;
+}
+
 #shot-preview-pointer {
   position: absolute;
   left: -12px;
@@ -167,6 +176,19 @@
   top: 20px;
   margin: auto;
   z-index: 2;
+}
+
+#shot-preview-pointer-2 {
+  position: absolute;
+  left: -12px;
+  right: 0;
+  top: 13px;
+  margin: auto;
+  z-index: 2;
+}
+
+.blink {
+  opacity: 0.7;
 }
 
 #screen-container {
