@@ -357,7 +357,7 @@ $(document).ready(function() {
           shotStep();
 
         /* ------- ACE Functionality ------- */
-          if(shotPower >= 211 && shotPower <= 217) {
+          if(shotPower >= 204 && shotPower <= 210) {
             setTimeout(function() {
               $disc.addClass("hidden");
               $discShadow.addClass("hidden");
