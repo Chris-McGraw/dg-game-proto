@@ -78,6 +78,8 @@ $(document).ready(function() {
   var shotWidth2 = 0;
   var releaseLoopCount1 = 0;
 
+  var aimPointerPositionY = 20;
+
 /* ------------------------- Function Declarations ------------------------- */
 
   function checkIndicatorPos() {
@@ -450,6 +452,9 @@ $(document).ready(function() {
       shotLoopCount1 = 0;
       releaseLoopValue = 0;
       releaseLoopCount1 = 0;
+
+      $shotPreviewPointer.css("top", "20px");
+      aimPointerPositionY = 20;
     }, 4000);
   }
 
@@ -575,6 +580,18 @@ $(document).ready(function() {
 /* ---------------------------- Event Handlers ---------------------------- */
 
   $(document).keydown(function(event) {
+  /* ----- Move Aim Pointer Down ----- */
+    if(event.which === 83 && aimPointerPositionY < 300 || event.which === 40 && aimPointerPositionY < 300) {
+      aimPointerPositionY += 10;
+      $shotPreviewPointer.css("top", aimPointerPositionY + "px");
+    }
+  /* ----- Move Aim Pointer Up ----- */
+    if(event.which === 87 && aimPointerPositionY > 20 || event.which === 38 && aimPointerPositionY > 20) {
+      aimPointerPositionY -= 10;
+      $shotPreviewPointer.css("top", aimPointerPositionY + "px");
+    }
+
+  /* ----- Spacebar Press ----- */
     if(event.which === 32 && spaceBarPress === 0) {
       spacebarPress1();
     }
