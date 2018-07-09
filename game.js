@@ -62,6 +62,7 @@ $(document).ready(function() {
   var $disc = $("#disc");
   var $discShadow = $("#disc-shadow");
   var $powerIndicator = $("#power-indicator");
+  var $powerAimIndicator = $("#power-aim-indicator");
   var $indicatorTrail = $("#indicator-trail");
   var $indicatorGhost = $("#indicator-ghost");
   var indicatorGhostPositionX = 0;
@@ -79,6 +80,7 @@ $(document).ready(function() {
   var releaseLoopCount1 = 0;
 
   var aimPointerPositionY = 20;
+  var aimPointerPositionX = 224;
 
 /* ------------------------- Function Declarations ------------------------- */
 
@@ -455,6 +457,8 @@ $(document).ready(function() {
 
       $shotPreviewPointer.css("top", "20px");
       aimPointerPositionY = 20;
+      $powerAimIndicator.css("left", "224px");
+      aimPointerPositionX = 224;
     }, 4000);
   }
 
@@ -584,11 +588,17 @@ $(document).ready(function() {
     if(event.which === 83 && aimPointerPositionY < 300 || event.which === 40 && aimPointerPositionY < 300) {
       aimPointerPositionY += 10;
       $shotPreviewPointer.css("top", aimPointerPositionY + "px");
+  /* --- Power Aim Indicator Left --- */
+      aimPointerPositionX -= 7;
+      $powerAimIndicator.css("left", aimPointerPositionX + "px");
     }
   /* ----- Move Aim Pointer Up ----- */
     if(event.which === 87 && aimPointerPositionY > 20 || event.which === 38 && aimPointerPositionY > 20) {
       aimPointerPositionY -= 10;
       $shotPreviewPointer.css("top", aimPointerPositionY + "px");
+   /* --- Power Aim Indicator Right --- */
+      aimPointerPositionX += 7;
+      $powerAimIndicator.css("left", aimPointerPositionX + "px");
     }
 
   /* ----- Spacebar Press ----- */

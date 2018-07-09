@@ -422,6 +422,20 @@
   transition: transform 270ms linear;
 }
 
+#power-aim-indicator {
+  position: absolute;
+  left: 224px;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 18px;
+  margin: auto;
+  border: 1px solid darkGray;
+  border-radius: 1px;
+  background-color: white;
+  z-index: 0;
+}
+
 #indicator-trail {
   position: absolute;
   left: 8px;
