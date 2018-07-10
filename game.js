@@ -26,6 +26,10 @@ $(document).ready(function() {
 
 /* ------------------------ Audio File Declarations ------------------------ */
 
+  var moveShotPreviewAudio = document.getElementById("move-shot-preview-audio");
+  moveShotPreviewAudio.muted = false;
+  moveShotPreviewAudio.volume = 1.0;
+
   var meterUpAudio = document.getElementById("meter-up-audio");
   meterUpAudio.muted = false;
   meterUpAudio.volume = 1.0;
@@ -54,7 +58,10 @@ $(document).ready(function() {
 
   var $obZone = $("#ob-zone-0");
 
-  var $shotPreviewPointer = $("#shot-preview-pointer");
+  var $previewPointerContainer = $("#preview-pointer-container");
+  var $shotPreviewPointerTop = $("#shot-preview-pointer-top");
+  var $shotPreviewPointerBottom = $("#shot-preview-pointer-bottom");
+
   var $basket = $("#basket");
   var $playerSprite = $("#player-sprite");
   var $discTemp = $("#disc-temp");
@@ -62,10 +69,13 @@ $(document).ready(function() {
   var $disc = $("#disc");
   var $discShadow = $("#disc-shadow");
   var $powerIndicator = $("#power-indicator");
+  var $powerAimIndicator = $("#power-aim-indicator");
   var $indicatorTrail = $("#indicator-trail");
   var $indicatorGhost = $("#indicator-ghost");
   var indicatorGhostPositionX = 0;
   var $discWaterSplash = $("#disc-water-splash");
+
+  var shotStarted = false;
 
   var spaceBarPress = 0;
   var shotLoopValue = 0;
@@ -78,7 +88,66 @@ $(document).ready(function() {
   var shotWidth2 = 0;
   var releaseLoopCount1 = 0;
 
+  var aimPointerPositionY = 0;
+  var aimPointerPositionX = 224;
+
 /* ------------------------- Function Declarations ------------------------- */
+
+  function shotPreviewBlink() {
+    setTimeout(function() {
+      $shotPreviewPointerTop.addClass("blink");
+
+      setTimeout(function() {
+        $shotPreviewPointerBottom.addClass("blink");
+      }, 500);
+
+      setTimeout(function() {
+        $shotPreviewPointerTop.removeClass("blink");
+        $shotPreviewPointerBottom.removeClass("blink");
+      }, 1000);
+
+      setTimeout(function() {
+        shotPreviewBlink();
+      }, 2000);
+    }, 100);
+  }
+
+
+  function moveShotPreviewUp() {
+    if(shotStarted === false) {
+    /* ----- Shot Preview Pointer Up ----- */
+      aimPointerPositionY -= 10;
+      $previewPointerContainer.css("top", aimPointerPositionY + "px");
+
+    /* ---- Power Aim Indicator Right ---- */
+      aimPointerPositionX += 7;
+      $powerAimIndicator.css("left", aimPointerPositionX + "px");
+
+    /* -- Play Move Shot Preview Audio -- */
+      moveShotPreviewAudio.muted = false;
+      moveShotPreviewAudio.currentTime = 0;
+      moveShotPreviewAudio.play();
+    }
+  }
+
+
+  function moveShotPreviewDown() {
+    if(shotStarted === false) {
+    /* ---- Shot Preview Pointer Down ---- */
+      aimPointerPositionY += 10;
+      $previewPointerContainer.css("top", aimPointerPositionY + "px");
+
+    /* ---- Power Aim Indicator Left ---- */
+      aimPointerPositionX -= 7;
+      $powerAimIndicator.css("left", aimPointerPositionX + "px");
+
+    /* -- Play Move Shot Preview Audio -- */
+      moveShotPreviewAudio.muted = false;
+      moveShotPreviewAudio.currentTime = 0;
+      moveShotPreviewAudio.play();
+    }
+  }
+
 
   function checkIndicatorPos() {
     if($powerIndicator.position().left === -27 && spaceBarPress === 2) {
@@ -308,7 +377,7 @@ $(document).ready(function() {
       if(shotPower >= (shotLoopValue - 6) && shotPower <= (shotLoopValue)) {
         console.log("shotLoopRange = " + (shotLoopValue - 6) + " & " + shotLoopValue);
 
-        $shotPreviewPointer.addClass("hidden");
+        $previewPointerContainer.addClass("hidden");
         $discContainer.css("z-index", "2");
 
       /* ------------ Good Release Early ------------ */
@@ -357,7 +426,7 @@ $(document).ready(function() {
           shotStep();
 
         /* ------- ACE Functionality ------- */
-          if(shotPower >= 211 && shotPower <= 217) {
+          if(shotPower >= 204 && shotPower <= 210) {
             setTimeout(function() {
               $disc.addClass("hidden");
               $discShadow.addClass("hidden");
@@ -422,7 +491,7 @@ $(document).ready(function() {
   /* ----- Shot Reset Functionality ----- */
     setTimeout(function() {
       $basket.attr("src", basketEmptyImg);
-      $shotPreviewPointer.removeClass("hidden");
+      $previewPointerContainer.removeClass("hidden");
       $playerSprite.removeClass("player-drive-movement");
       $discTemp.removeClass("hidden");
       $discContainer.removeClass("disc-shot-end");
@@ -450,6 +519,12 @@ $(document).ready(function() {
       shotLoopCount1 = 0;
       releaseLoopValue = 0;
       releaseLoopCount1 = 0;
+      shotStarted = false;
+
+      $previewPointerContainer.css("top", "0px");
+      aimPointerPositionY = 0;
+      $powerAimIndicator.css("left", "224px");
+      aimPointerPositionX = 224;
     }, 4000);
   }
 
@@ -527,6 +602,7 @@ $(document).ready(function() {
 
       shotPower = Math.floor($powerIndicator.position().left);
       spaceBarPress = 2;
+      shotStarted = true;
 
       console.log("");
       console.log("shotPower = " + shotPower);
@@ -574,7 +650,18 @@ $(document).ready(function() {
 
 /* ---------------------------- Event Handlers ---------------------------- */
 
+  /* shotPreviewBlink(); */
+
   $(document).keydown(function(event) {
+  /* --- Shot Preview Pointer Movement --- */
+    if(event.which === 87 && aimPointerPositionY > 0 || event.which === 38 && aimPointerPositionY > 0) {
+      moveShotPreviewUp();
+    }
+    if(event.which === 83 && aimPointerPositionY < 280 || event.which === 40 && aimPointerPositionY < 280) {
+      moveShotPreviewDown();
+    }
+
+  /* -------- Spacebar Press -------- */
     if(event.which === 32 && spaceBarPress === 0) {
       spacebarPress1();
     }
