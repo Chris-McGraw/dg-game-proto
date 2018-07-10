@@ -110,6 +110,39 @@ $(document).ready(function() {
     }, 100);
   }
 
+
+  function moveShotPreviewUp() {
+  /* ----- Shot Preview Pointer Up ----- */
+    aimPointerPositionY -= 10;
+    $previewPointerContainer.css("top", aimPointerPositionY + "px");
+
+  /* ---- Power Aim Indicator Right ---- */
+    aimPointerPositionX += 7;
+    $powerAimIndicator.css("left", aimPointerPositionX + "px");
+
+  /* -- Play Move Shot Preview Audio -- */
+    moveShotPreviewAudio.muted = false;
+    moveShotPreviewAudio.currentTime = 0;
+    moveShotPreviewAudio.play();
+  }
+
+
+  function moveShotPreviewDown() {
+  /* ---- Shot Preview Pointer Down ---- */
+    aimPointerPositionY += 10;
+    $previewPointerContainer.css("top", aimPointerPositionY + "px");
+
+  /* ---- Power Aim Indicator Left ---- */
+    aimPointerPositionX -= 7;
+    $powerAimIndicator.css("left", aimPointerPositionX + "px");
+
+  /* -- Play Move Shot Preview Audio -- */
+    moveShotPreviewAudio.muted = false;
+    moveShotPreviewAudio.currentTime = 0;
+    moveShotPreviewAudio.play();
+  }
+
+
   function checkIndicatorPos() {
     if($powerIndicator.position().left === -27 && spaceBarPress === 2) {
       releasePoint = -27;
@@ -612,32 +645,15 @@ $(document).ready(function() {
   /* shotPreviewBlink(); */
 
   $(document).keydown(function(event) {
-  /* ----- Move Aim Pointer Down ----- */
-    if(event.which === 83 && aimPointerPositionY < 280 || event.which === 40 && aimPointerPositionY < 280) {
-      aimPointerPositionY += 10;
-      $previewPointerContainer.css("top", aimPointerPositionY + "px");
-  /* --- Power Aim Indicator Left --- */
-      aimPointerPositionX -= 7;
-      $powerAimIndicator.css("left", aimPointerPositionX + "px");
-
-      moveShotPreviewAudio.muted = false;
-      moveShotPreviewAudio.currentTime = 0;
-      moveShotPreviewAudio.play();
-    }
-  /* ----- Move Aim Pointer Up ----- */
+  /* --- Shot Preview Pointer Movement --- */
     if(event.which === 87 && aimPointerPositionY > 0 || event.which === 38 && aimPointerPositionY > 0) {
-      aimPointerPositionY -= 10;
-      $previewPointerContainer.css("top", aimPointerPositionY + "px");
-   /* --- Power Aim Indicator Right --- */
-      aimPointerPositionX += 7;
-      $powerAimIndicator.css("left", aimPointerPositionX + "px");
-
-      moveShotPreviewAudio.muted = false;
-      moveShotPreviewAudio.currentTime = 0;
-      moveShotPreviewAudio.play();
+      moveShotPreviewUp();
+    }
+    if(event.which === 83 && aimPointerPositionY < 280 || event.which === 40 && aimPointerPositionY < 280) {
+      moveShotPreviewDown();
     }
 
-  /* ----- Spacebar Press ----- */
+  /* -------- Spacebar Press -------- */
     if(event.which === 32 && spaceBarPress === 0) {
       spacebarPress1();
     }
