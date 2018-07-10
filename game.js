@@ -26,6 +26,10 @@ $(document).ready(function() {
 
 /* ------------------------ Audio File Declarations ------------------------ */
 
+  var moveShotPreviewAudio = document.getElementById("move-shot-preview-audio");
+  moveShotPreviewAudio.muted = false;
+  moveShotPreviewAudio.volume = 1.0;
+
   var meterUpAudio = document.getElementById("meter-up-audio");
   meterUpAudio.muted = false;
   meterUpAudio.volume = 1.0;
@@ -615,6 +619,10 @@ $(document).ready(function() {
   /* --- Power Aim Indicator Left --- */
       aimPointerPositionX -= 7;
       $powerAimIndicator.css("left", aimPointerPositionX + "px");
+
+      moveShotPreviewAudio.muted = false;
+      moveShotPreviewAudio.currentTime = 0;
+      moveShotPreviewAudio.play();
     }
   /* ----- Move Aim Pointer Up ----- */
     if(event.which === 87 && aimPointerPositionY > 0 || event.which === 38 && aimPointerPositionY > 0) {
@@ -623,6 +631,10 @@ $(document).ready(function() {
    /* --- Power Aim Indicator Right --- */
       aimPointerPositionX += 7;
       $powerAimIndicator.css("left", aimPointerPositionX + "px");
+
+      moveShotPreviewAudio.muted = false;
+      moveShotPreviewAudio.currentTime = 0;
+      moveShotPreviewAudio.play();
     }
 
   /* ----- Spacebar Press ----- */
