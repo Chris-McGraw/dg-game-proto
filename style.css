@@ -20,7 +20,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid red;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-0:before {
@@ -34,7 +34,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-0:after {
@@ -48,7 +48,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid yellow;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-1 {
@@ -61,7 +61,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid red;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-1:before {
@@ -75,7 +75,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-2 {
@@ -88,7 +88,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid red;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-2:before {
@@ -102,7 +102,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-2:after {
@@ -116,7 +116,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid yellow;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-3 {
@@ -129,7 +129,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid red;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-3:before {
@@ -143,7 +143,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid white;
-  z-index: 1;
+  z-index: 10;
 }
 
 #ob-zone-3:after {
@@ -157,7 +157,7 @@
   background-color: rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
   border: 1px solid yellow;
-  z-index: 1;
+  z-index: 10;
 }
 
 #preview-pointer-container {
@@ -166,7 +166,7 @@
   right: 0;
   top: 0;
   margin: auto;
-  z-index: 2;
+  z-index: 20;
 }
 
 #shot-preview-pointer-top {
@@ -175,7 +175,7 @@
   right: 0;
   top: 13px;
   margin: auto;
-  z-index: 2;
+  z-index: 20;
 }
 
 #shot-preview-pointer-bottom {
@@ -184,7 +184,7 @@
   right: 0;
   top: 20px;
   margin: auto;
-  z-index: 2;
+  z-index: 20;
 }
 
 .blink {
@@ -225,7 +225,7 @@
   right: 0;
   top: 22px;
   margin: auto;
-  z-index: 1;
+  z-index: 10;
 }
 
 #teepad {
@@ -235,7 +235,7 @@
   top: 320px;
   margin: auto;
   box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  z-index: 20;
 }
 
 #player-sprite {
@@ -244,7 +244,7 @@
   right: 0;
   top: 330px;
   margin: auto;
-  z-index: 3;
+  z-index: 30;
 }
 
 .player-drive-movement {
@@ -259,7 +259,7 @@
   right: 0;
   top: 350px;
   margin: auto;
-  z-index: 2;
+  z-index: 20;
 }
 
 #disc-container {
@@ -270,7 +270,7 @@
   width: 10px;
   height: 10px;
   margin: auto;
-  z-index: 1;
+  z-index: 10;
 
   /* border: 1px solid black; */
 }
@@ -287,7 +287,7 @@
   width: 10px;
   height: 10px;
   margin: auto;
-  z-index: 1;
+  z-index: 10;
   border: 1px solid black;
 }
 
@@ -299,7 +299,7 @@
   width: 10px;
   height: 10px;
   margin: auto;
-  z-index: 2;
+  z-index: 20;
   border: 1px solid blue;
 } */
 
@@ -313,7 +313,7 @@
   margin: auto;
   background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1527429339/DG-GAME-PROTO/disc-16x16_wi4gex.png");
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* #disc:after {
@@ -327,7 +327,7 @@
   margin: auto;
   background-image: url("https://res.cloudinary.com/dtwyohvli/image/upload/v1527429339/DG-GAME-PROTO/disc-16x16_wi4gex.png");
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: 10;
 } */
 
 .disc-shot {
@@ -421,7 +421,7 @@
   border: 1px solid darkGray;
   border-radius: 1px;
   background-color: lightGray;
-  z-index: 1;
+  z-index: 10;
 }
 
 .power-indicator-move-right {
@@ -466,7 +466,7 @@
   height: 14px;
   border-radius: 1px;
   background-color: darkGray;
-  z-index: -1;
+  z-index: -10;
 }
 
 .expand-trail {

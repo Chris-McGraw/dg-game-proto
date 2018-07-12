@@ -376,7 +376,7 @@ $(document).ready(function() {
         console.log("shotLoopRange = " + (shotLoopValue - 6) + " & " + shotLoopValue);
 
         $previewPointerContainer.addClass("hidden");
-        $discContainer.css("z-index", "2");
+        $discContainer.css("z-index", "20");
 
       /* ------------ Good Release Early ------------ */
         if(releasePoint >= 1 && releasePoint <= 9) {
@@ -494,7 +494,7 @@ $(document).ready(function() {
       $discTemp.removeClass("hidden");
       $discContainer.removeClass("disc-shot-end");
       $discContainer.removeAttr("style");
-      $discContainer.css("z-index", "1");
+      $discContainer.css("z-index", "10");
       $disc.removeClass("hidden");
       $disc.removeClass("disc-shot");
       $disc.removeAttr("style");
