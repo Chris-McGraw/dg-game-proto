@@ -363,6 +363,9 @@ $(document).ready(function() {
       $discShadow.css({"transform": "translateY(" + shotLength1 + "px)"});
       $discContainer.css({"transform": "translateX(" + shotWidth2 + "px)"});
 
+      $discWaterSplash.css("top", (339 + shotLength1) + "px");
+      $discWaterSplash.css({"transform": "translateX(" + shotWidth2 + "px)"});
+
       setTimeout(function() {
         checkDiscOB();
       }, 1300);
@@ -376,7 +379,7 @@ $(document).ready(function() {
         console.log("shotLoopRange = " + (shotLoopValue - 6) + " & " + shotLoopValue);
 
         $previewPointerContainer.addClass("hidden");
-        $discContainer.css("z-index", "2");
+        $discContainer.css("z-index", "20");
 
       /* ------------ Good Release Early ------------ */
         if(releasePoint >= 1 && releasePoint <= 9) {
@@ -494,7 +497,7 @@ $(document).ready(function() {
       $discTemp.removeClass("hidden");
       $discContainer.removeClass("disc-shot-end");
       $discContainer.removeAttr("style");
-      $discContainer.css("z-index", "1");
+      $discContainer.css("z-index", "10");
       $disc.removeClass("hidden");
       $disc.removeClass("disc-shot");
       $disc.removeAttr("style");
