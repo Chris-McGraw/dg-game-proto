@@ -125,7 +125,6 @@ $(document).ready(function() {
 
     /* -- Play Move Shot Preview Audio -- */
       moveShotPreviewAudio.muted = false;
-      moveShotPreviewAudio.currentTime = 0;
       moveShotPreviewAudio.play();
     }
   }
@@ -143,7 +142,6 @@ $(document).ready(function() {
 
     /* -- Play Move Shot Preview Audio -- */
       moveShotPreviewAudio.muted = false;
-      moveShotPreviewAudio.currentTime = 0;
       moveShotPreviewAudio.play();
     }
   }
@@ -671,6 +669,13 @@ $(document).ready(function() {
     else if(event.which === 32 && spaceBarPress === 2) {
       spacebarPress3();
     }
+  });
+
+  $(document).keyup(function(event) {
+    setTimeout(function() {
+      moveShotPreviewAudio.pause();
+      moveShotPreviewAudio.currentTime = 0;
+    }, 50);
   });
 
 });
