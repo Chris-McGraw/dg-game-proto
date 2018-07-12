@@ -354,10 +354,11 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 339px;
   width: 16px;
   height: 16px;
   margin: auto;
+  z-index: 0;
 }
 
 #shot-UI-container {

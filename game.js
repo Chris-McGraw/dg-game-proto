@@ -363,6 +363,9 @@ $(document).ready(function() {
       $discShadow.css({"transform": "translateY(" + shotLength1 + "px)"});
       $discContainer.css({"transform": "translateX(" + shotWidth2 + "px)"});
 
+      $discWaterSplash.css("top", (339 + shotLength1) + "px");
+      $discWaterSplash.css({"transform": "translateX(" + shotWidth2 + "px)"});
+
       setTimeout(function() {
         checkDiscOB();
       }, 1300);
