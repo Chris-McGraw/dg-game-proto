@@ -396,6 +396,17 @@
   border-bottom: 1px solid black; */
 }
 
+#shot-preview-length {
+  position: absolute;
+  left: 419px;
+  right: 0;
+  top: 8px;
+  margin: auto;
+  font-family: "VT323", monospace;
+  font-size: 12px;
+  color: white;
+}
+
 #shot-power-meter {
   position: absolute;
   left: 0;

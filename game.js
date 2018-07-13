@@ -61,6 +61,7 @@ $(document).ready(function() {
   var $previewPointerContainer = $("#preview-pointer-container");
   var $shotPreviewPointerTop = $("#shot-preview-pointer-top");
   var $shotPreviewPointerBottom = $("#shot-preview-pointer-bottom");
+  var $shotPreviewLength = $("#shot-preview-length");
 
   var $basket = $("#basket");
   var $playerSprite = $("#player-sprite");
@@ -88,6 +89,7 @@ $(document).ready(function() {
   var shotWidth2 = 0;
   var releaseLoopCount1 = 0;
 
+  var previewLengthPositionX = 419;
   var aimPointerPositionY = 0;
   var aimPointerPositionX = 224;
 
@@ -119,6 +121,10 @@ $(document).ready(function() {
       aimPointerPositionY -= 10;
       $previewPointerContainer.css("top", aimPointerPositionY + "px");
 
+    /* ---- Shot Preview Length Right ---- */
+      previewLengthPositionX += 7;
+      $shotPreviewLength.css("left", previewLengthPositionX + "px");
+
     /* ---- Power Aim Indicator Right ---- */
       aimPointerPositionX += 7;
       $powerAimIndicator.css("left", aimPointerPositionX + "px");
@@ -135,6 +141,10 @@ $(document).ready(function() {
     /* ---- Shot Preview Pointer Down ---- */
       aimPointerPositionY += 10;
       $previewPointerContainer.css("top", aimPointerPositionY + "px");
+
+    /* ---- Shot Preview Length Left ---- */
+      previewLengthPositionX -= 7;
+      $shotPreviewLength.css("left", previewLengthPositionX + "px");
 
     /* ---- Power Aim Indicator Left ---- */
       aimPointerPositionX -= 7;
@@ -524,6 +534,8 @@ $(document).ready(function() {
 
       $previewPointerContainer.css("top", "0px");
       aimPointerPositionY = 0;
+      $shotPreviewLength.css("left", "419px");
+      previewLengthPositionX = 419;
       $powerAimIndicator.css("left", "224px");
       aimPointerPositionX = 224;
     }, 4000);
