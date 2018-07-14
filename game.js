@@ -89,6 +89,7 @@ $(document).ready(function() {
   var shotWidth2 = 0;
   var releaseLoopCount1 = 0;
 
+  var currentShotPreviewLength = 200;
   var previewLengthPositionX = 419;
   var aimPointerPositionY = 0;
   var aimPointerPositionX = 224;
@@ -115,6 +116,19 @@ $(document).ready(function() {
   }
 
 
+  function checkShotPreviewLength() {
+    if(currentShotPreviewLength.toString().length === 3) {
+      $shotPreviewLength.html(currentShotPreviewLength);
+    }
+    else if(currentShotPreviewLength.toString().length === 2) {
+      $shotPreviewLength.html("0" + currentShotPreviewLength);
+    }
+    else if(currentShotPreviewLength.toString().length === 1) {
+      $shotPreviewLength.html("00" + currentShotPreviewLength);
+    }
+  }
+
+
   function moveShotPreviewUp() {
     if(shotStarted === false) {
     /* ----- Shot Preview Pointer Up ----- */
@@ -123,7 +137,10 @@ $(document).ready(function() {
 
     /* ---- Shot Preview Length Right ---- */
       previewLengthPositionX += 7;
+      currentShotPreviewLength += 7;
+
       $shotPreviewLength.css("left", previewLengthPositionX + "px");
+      checkShotPreviewLength();
 
     /* ---- Power Aim Indicator Right ---- */
       aimPointerPositionX += 7;
@@ -144,7 +161,10 @@ $(document).ready(function() {
 
     /* ---- Shot Preview Length Left ---- */
       previewLengthPositionX -= 7;
+      currentShotPreviewLength -= 7;
+
       $shotPreviewLength.css("left", previewLengthPositionX + "px");
+      checkShotPreviewLength();
 
     /* ---- Power Aim Indicator Left ---- */
       aimPointerPositionX -= 7;
@@ -532,12 +552,14 @@ $(document).ready(function() {
       releaseLoopCount1 = 0;
       shotStarted = false;
 
-      $previewPointerContainer.css("top", "0px");
-      aimPointerPositionY = 0;
-      $shotPreviewLength.css("left", "419px");
+      currentShotPreviewLength = 200;
+      $shotPreviewLength.html("200");
       previewLengthPositionX = 419;
-      $powerAimIndicator.css("left", "224px");
+      $shotPreviewLength.css("left", "419px");
+      aimPointerPositionY = 0;
+      $previewPointerContainer.css("top", "0px");
       aimPointerPositionX = 224;
+      $powerAimIndicator.css("left", "224px");
     }, 4000);
   }
 
