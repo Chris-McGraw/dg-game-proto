@@ -54,6 +54,10 @@ $(document).ready(function() {
   chainHitAudio.muted = false;
   chainHitAudio.volume = 0.5;
 
+  var cageHitAudio = document.getElementById("cage-hit-audio");
+  chainHitAudio.muted = false;
+  chainHitAudio.volume = 1.0;
+
 /* ------------------------- Variable Declarations ------------------------- */
 
   var $obZone = $("#ob-zone-0");
@@ -465,6 +469,18 @@ $(document).ready(function() {
               chainHitAudio.play();
             }, 2200);
           }
+
+        /* ---- Cage Hit Functionality ---- */
+          else if(shotPower >= 197 && shotPower <= 203) {
+            setTimeout(function() {
+              cageHitAudio.play();
+
+              $disc.addClass("disc-shot-cage-hit");
+              $disc.css({"transform": "translateY(" + (shotLength1 + 10) + "px) rotate(-180deg)"});
+              $discShadow.addClass("disc-shot-cage-hit");
+              $discShadow.css({"transform": "translateY(" + (shotLength1 + 10) + "px) rotate(0deg)"});
+            }, 2200);
+          }
         }
 
       /* ---------- Early Release ---------- */
@@ -530,6 +546,7 @@ $(document).ready(function() {
       $discContainer.css("z-index", "10");
       $disc.removeClass("hidden");
       $disc.removeClass("disc-shot");
+      $disc.removeClass("disc-shot-cage-hit");
       $disc.removeAttr("style");
       $disc.removeClass("player-drive-movement");
 
@@ -540,6 +557,7 @@ $(document).ready(function() {
       $discShadow.removeClass("player-drive-movement");
       $discShadow.removeClass("disc-shot");
       $discShadow.removeClass("disc-shot-end");
+      $discShadow.removeClass("disc-shot-cage-hit");
       $discShadow.removeAttr("style");
       $powerIndicator.css("left", "0px");
       $indicatorTrail.css("width", "4px");
