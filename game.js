@@ -476,9 +476,9 @@ $(document).ready(function() {
               cageHitAudio.play();
 
               $disc.addClass("disc-shot-cage-hit");
-              $disc.css({"transform": "translateY(" + (shotLength1 + 10) + "px) rotate(-180deg)"});
+              $disc.css({"transform": "translateY(" + (shotLength1 + 14) + "px) rotate(-180deg)"});
               $discShadow.addClass("disc-shot-cage-hit");
-              $discShadow.css({"transform": "translateY(" + (shotLength1 + 10) + "px) rotate(0deg)"});
+              $discShadow.css({"transform": "translateY(" + (shotLength1 + 14) + "px) rotate(0deg)"});
             }, 2200);
           }
         }
