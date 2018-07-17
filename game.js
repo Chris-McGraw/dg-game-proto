@@ -96,7 +96,7 @@ $(document).ready(function() {
   var currentShotPreviewLength = 200;
   var previewLengthPositionX = 419;
   var aimPointerPositionY = 0;
-  var aimPointerPositionX = 224;
+  var aimIndicatorPositionX = 224;
 
 /* ------------------------- Function Declarations ------------------------- */
 
@@ -147,8 +147,8 @@ $(document).ready(function() {
       checkShotPreviewLength();
 
     /* ---- Power Aim Indicator Right ---- */
-      aimPointerPositionX += 7;
-      $powerAimIndicator.css("left", aimPointerPositionX + "px");
+      aimIndicatorPositionX += 7;
+      $powerAimIndicator.css("left", aimIndicatorPositionX + "px");
 
     /* -- Play Move Shot Preview Audio -- */
       moveShotPreviewAudio.muted = false;
@@ -171,8 +171,8 @@ $(document).ready(function() {
       checkShotPreviewLength();
 
     /* ---- Power Aim Indicator Left ---- */
-      aimPointerPositionX -= 7;
-      $powerAimIndicator.css("left", aimPointerPositionX + "px");
+      aimIndicatorPositionX -= 7;
+      $powerAimIndicator.css("left", aimIndicatorPositionX + "px");
 
     /* -- Play Move Shot Preview Audio -- */
       moveShotPreviewAudio.muted = false;
@@ -576,7 +576,7 @@ $(document).ready(function() {
       $shotPreviewLength.css("left", "419px");
       aimPointerPositionY = 0;
       $previewPointerContainer.css("top", "0px");
-      aimPointerPositionX = 224;
+      aimIndicatorPositionX = 224;
       $powerAimIndicator.css("left", "224px");
     }, 4000);
   }
