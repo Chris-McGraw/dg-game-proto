@@ -96,7 +96,10 @@ $(document).ready(function() {
   var currentShotPreviewLength = 200;
   var previewLengthPositionX = 419;
   var aimPointerPositionY = 0;
-  var aimPointerPositionX = 224;
+  var aimPointerPositionX = 0;
+  var aimIndicatorPositionX = 224;
+
+  var $shotTestButton = $("#shot-test-button");
 
 /* ------------------------- Function Declarations ------------------------- */
 
@@ -147,8 +150,8 @@ $(document).ready(function() {
       checkShotPreviewLength();
 
     /* ---- Power Aim Indicator Right ---- */
-      aimPointerPositionX += 7;
-      $powerAimIndicator.css("left", aimPointerPositionX + "px");
+      aimIndicatorPositionX += 7;
+      $powerAimIndicator.css("left", aimIndicatorPositionX + "px");
 
     /* -- Play Move Shot Preview Audio -- */
       moveShotPreviewAudio.muted = false;
@@ -171,8 +174,34 @@ $(document).ready(function() {
       checkShotPreviewLength();
 
     /* ---- Power Aim Indicator Left ---- */
-      aimPointerPositionX -= 7;
-      $powerAimIndicator.css("left", aimPointerPositionX + "px");
+      aimIndicatorPositionX -= 7;
+      $powerAimIndicator.css("left", aimIndicatorPositionX + "px");
+
+    /* -- Play Move Shot Preview Audio -- */
+      moveShotPreviewAudio.muted = false;
+      moveShotPreviewAudio.play();
+    }
+  }
+
+
+  function moveShotPreviewLeft() {
+    if(shotStarted === false) {
+    /* ---- Shot Preview Pointer Left ---- */
+      aimPointerPositionX -= 40;
+      $previewPointerContainer.css("left", aimPointerPositionX + "px");
+
+    /* -- Play Move Shot Preview Audio -- */
+      moveShotPreviewAudio.muted = false;
+      moveShotPreviewAudio.play();
+    }
+  }
+
+
+  function moveShotPreviewRight() {
+    if(shotStarted === false) {
+    /* ---- Shot Preview Pointer Right ---- */
+      aimPointerPositionX += 40;
+      $previewPointerContainer.css("left", aimPointerPositionX + "px");
 
     /* -- Play Move Shot Preview Audio -- */
       moveShotPreviewAudio.muted = false;
@@ -576,7 +605,9 @@ $(document).ready(function() {
       $shotPreviewLength.css("left", "419px");
       aimPointerPositionY = 0;
       $previewPointerContainer.css("top", "0px");
-      aimPointerPositionX = 224;
+      aimPointerPositionX = 0;
+      $previewPointerContainer.css("left", "0px");
+      aimIndicatorPositionX = 224;
       $powerAimIndicator.css("left", "224px");
     }, 4000);
   }
@@ -705,6 +736,30 @@ $(document).ready(function() {
 
   /* shotPreviewBlink(); */
 
+  $shotTestButton.on("click", function() {
+
+    shotPower = document.getElementById("input-box-1").value;
+
+    if(document.getElementById("input-box-2").value === "0") {
+      releasePoint = 0;
+    }
+    else {
+      releasePoint = document.getElementById("input-box-2").value;
+    }
+
+    console.log("");
+    console.log("TEST - shotPower: " + shotPower);
+    console.log("TEST - releasePoint: " + releasePoint);
+
+    backhandShotAnimation();
+
+    setTimeout(function() {
+      discDriveAudio.muted = false;
+      discDriveAudio.play();
+      playerShot();
+    }, 1340);
+  });
+
   $(document).keydown(function(event) {
   /* --- Shot Preview Pointer Movement --- */
     if(event.which === 87 && aimPointerPositionY > 0 || event.which === 38 && aimPointerPositionY > 0) {
@@ -713,6 +768,12 @@ $(document).ready(function() {
     if(event.which === 83 && aimPointerPositionY < 280 || event.which === 40 && aimPointerPositionY < 280) {
       moveShotPreviewDown();
     }
+    /* if(event.which === 65 && aimPointerPositionX > -200 || event.which === 37 && aimPointerPositionX > -200) {
+      moveShotPreviewLeft();
+    }
+    if(event.which === 68 && aimPointerPositionX < 200 || event.which === 39 && aimPointerPositionX < 200) {
+      moveShotPreviewRight();
+    } */
 
   /* -------- Spacebar Press -------- */
     if(event.which === 32 && spaceBarPress === 0) {
