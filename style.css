@@ -10,6 +10,97 @@
   display: none;
 }
 
+#shot-test-container {
+  position: absolute;
+  left: -764px;
+  right: 0;
+  top: 150px;
+  width: 100px;
+  height: 248px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+#test-title-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  width: 80px;
+  height: 20px;
+  margin: auto;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#test-title-1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  width: 80px;
+  height: 20px;
+  margin: auto;
+  text-align: center;
+  font-size: 13px;
+}
+
+#input-box-1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  width: 40px;
+  margin: auto;
+  text-align: center;
+}
+
+#test-title-2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  width: 80px;
+  height: 20px;
+  margin: auto;
+  text-align: center;
+  font-size: 13px;
+}
+
+#input-box-2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120px;
+  width: 40px;
+  margin: auto;
+  text-align: center;
+}
+
+#shot-test-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 200px;
+  width: 60px;
+  height: 20px;
+  padding-top: 3px;
+  margin: auto;
+  background-color: lightGray;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 1px 1px 0px #878787;
+}
+
+#shot-test-button:active {
+  background-color: #878787;
+  box-shadow: none;
+}
+
 #background-water {
   position: absolute;
   top: 0;

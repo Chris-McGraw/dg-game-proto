@@ -99,6 +99,8 @@ $(document).ready(function() {
   var aimPointerPositionX = 0;
   var aimIndicatorPositionX = 224;
 
+  var $shotTestButton = $("#shot-test-button");
+
 /* ------------------------- Function Declarations ------------------------- */
 
   function shotPreviewBlink() {
@@ -733,6 +735,30 @@ $(document).ready(function() {
 /* ---------------------------- Event Handlers ---------------------------- */
 
   /* shotPreviewBlink(); */
+
+  $shotTestButton.on("click", function() {
+
+    shotPower = document.getElementById("input-box-1").value;
+
+    if(document.getElementById("input-box-2").value === "0") {
+      releasePoint = 0;
+    }
+    else {
+      releasePoint = document.getElementById("input-box-2").value;
+    }
+
+    console.log("");
+    console.log("TEST - shotPower: " + shotPower);
+    console.log("TEST - releasePoint: " + releasePoint);
+
+    backhandShotAnimation();
+
+    setTimeout(function() {
+      discDriveAudio.muted = false;
+      discDriveAudio.play();
+      playerShot();
+    }, 1340);
+  });
 
   $(document).keydown(function(event) {
   /* --- Shot Preview Pointer Movement --- */
