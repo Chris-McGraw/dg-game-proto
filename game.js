@@ -103,6 +103,30 @@ $(document).ready(function() {
 
 /* ------------------------- Function Declarations ------------------------- */
 
+  function startShotTest() {
+    shotPower = document.getElementById("input-box-1").value;
+
+    if(document.getElementById("input-box-2").value === "0") {
+      releasePoint = 0;
+    }
+    else {
+      releasePoint = document.getElementById("input-box-2").value;
+    }
+
+    console.log("");
+    console.log("TEST - shotPower: " + shotPower);
+    console.log("TEST - releasePoint: " + releasePoint);
+
+    backhandShotAnimation();
+
+    setTimeout(function() {
+      discDriveAudio.muted = false;
+      discDriveAudio.play();
+      playerShot();
+    }, 1340);
+  }
+
+
   function shotPreviewBlink() {
     setTimeout(function() {
       $shotPreviewPointerTop.addClass("blink");
@@ -740,26 +764,7 @@ $(document).ready(function() {
 
   $shotTestButton.on("click", function() {
     if(shotStarted === false) {
-      shotPower = document.getElementById("input-box-1").value;
-
-      if(document.getElementById("input-box-2").value === "0") {
-        releasePoint = 0;
-      }
-      else {
-        releasePoint = document.getElementById("input-box-2").value;
-      }
-
-      console.log("");
-      console.log("TEST - shotPower: " + shotPower);
-      console.log("TEST - releasePoint: " + releasePoint);
-
-      backhandShotAnimation();
-
-      setTimeout(function() {
-        discDriveAudio.muted = false;
-        discDriveAudio.play();
-        playerShot();
-      }, 1340);
+      startShotTest();
     }
   });
 
