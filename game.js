@@ -267,7 +267,7 @@ $(document).ready(function() {
   }
 
 
-  /* function backhandShotAnimation() {
+  function backhandShotAnimation() {
     shotStarted = true;
 
     $playerSprite.attr("src", backhandShot0);
@@ -325,7 +325,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $playerSprite.attr("src", backhandShot0);
     }, 2520);
-  } */
+  }
 
 
   function waterSplashAnimation() {
