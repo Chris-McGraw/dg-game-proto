@@ -244,6 +244,8 @@ $(document).ready(function() {
 
 
   function backhandShotAnimation() {
+    shotStarted = true;
+
     $playerSprite.attr("src", backhandShot0);
     $playerSprite.addClass("player-drive-movement");
     $disc.addClass("player-drive-movement");
@@ -737,27 +739,28 @@ $(document).ready(function() {
   /* shotPreviewBlink(); */
 
   $shotTestButton.on("click", function() {
+    if(shotStarted === false) {
+      shotPower = document.getElementById("input-box-1").value;
 
-    shotPower = document.getElementById("input-box-1").value;
+      if(document.getElementById("input-box-2").value === "0") {
+        releasePoint = 0;
+      }
+      else {
+        releasePoint = document.getElementById("input-box-2").value;
+      }
 
-    if(document.getElementById("input-box-2").value === "0") {
-      releasePoint = 0;
+      console.log("");
+      console.log("TEST - shotPower: " + shotPower);
+      console.log("TEST - releasePoint: " + releasePoint);
+
+      backhandShotAnimation();
+
+      setTimeout(function() {
+        discDriveAudio.muted = false;
+        discDriveAudio.play();
+        playerShot();
+      }, 1340);
     }
-    else {
-      releasePoint = document.getElementById("input-box-2").value;
-    }
-
-    console.log("");
-    console.log("TEST - shotPower: " + shotPower);
-    console.log("TEST - releasePoint: " + releasePoint);
-
-    backhandShotAnimation();
-
-    setTimeout(function() {
-      discDriveAudio.muted = false;
-      discDriveAudio.play();
-      playerShot();
-    }, 1340);
   });
 
   $(document).keydown(function(event) {
