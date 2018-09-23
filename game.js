@@ -149,13 +149,13 @@ $(document).ready(function() {
 
   function checkShotPreviewLength() {
     if(currentShotPreviewLength.toString().length === 3) {
-      $shotPreviewLength.html(currentShotPreviewLength);
+      $shotPreviewLength.html(currentShotPreviewLength + "'");
     }
     else if(currentShotPreviewLength.toString().length === 2) {
-      $shotPreviewLength.html("0" + currentShotPreviewLength);
+      $shotPreviewLength.html("0" + currentShotPreviewLength + "'");
     }
     else if(currentShotPreviewLength.toString().length === 1) {
-      $shotPreviewLength.html("00" + currentShotPreviewLength);
+      $shotPreviewLength.html("00" + currentShotPreviewLength + "'");
     }
   }
 
@@ -540,7 +540,7 @@ $(document).ready(function() {
       shotStarted = false;
 
       currentShotPreviewLength = 200;
-      $shotPreviewLength.html("200");
+      $shotPreviewLength.html("200'");
       previewLengthPositionX = 419;
       $shotPreviewLength.css("left", "419px");
       aimPointerPositionY = 0;
