@@ -61,5 +61,8 @@ function backhandShotAnimation() {
 
   setTimeout(function() {
     $playerSprite.attr("src", backhandShot0);
+
+    shotStarted = false;
+    playerIdleAnimation();
   }, 2520);
 }

@@ -676,6 +676,10 @@ $(document).ready(function() {
 
   /* shotPreviewBlink(); */
 
+  if(shotStarted === false) {
+    playerIdleAnimation();
+  }
+
   $shotTestButton.on("click", function() {
     if(shotStarted === false) {
       startShotTest();
