@@ -62,6 +62,8 @@ $(document).ready(function() {
 
   var $obZone = $("#ob-zone-0");
 
+  var $notificationContainer = $("#notification-container");
+
   var $previewPointerContainer = $("#preview-pointer-container");
   var $shotPreviewPointerTop = $("#shot-preview-pointer-top");
   var $shotPreviewPointerBottom = $("#shot-preview-pointer-bottom");
@@ -274,6 +276,8 @@ $(document).ready(function() {
 
     $disc.addClass("hidden");
     $discShadow.css("visibility", "hidden");
+
+    $notificationContainer.addClass("notification-popup");
 
     setTimeout(function() {
       $discShadow.removeClass("player-drive-movement");
@@ -518,6 +522,8 @@ $(document).ready(function() {
       $disc.removeClass("disc-shot-cage-hit");
       $disc.removeAttr("style");
       $disc.removeClass("player-drive-movement");
+
+      $notificationContainer.removeClass("notification-popup");
 
       $discWaterSplash.addClass("hidden");
       $discShadow.css("visibility", "visible");
