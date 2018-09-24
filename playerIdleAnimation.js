@@ -13,32 +13,32 @@ function playerIdleAnimation() {
       $playerSprite.attr("src", idleFrame1);
       $discTemp.css("top", "351px");
     }
-  }, 250);
+  }, 400);
 
   setTimeout(function() {
     if(shotStarted === false) {
       $playerSprite.attr("src", idleFrame2);
       $discTemp.css("top", "352px");
     }
-  }, 500);
+  }, 800);
 
   setTimeout(function() {
     if(shotStarted === false) {
       $playerSprite.attr("src", idleFrame3);
       $discTemp.css("top", "351px");
     }
-  }, 750);
+  }, 1200);
 
   setTimeout(function() {
     if(shotStarted === false) {
       $playerSprite.attr("src", backhandShot0);
       $discTemp.css("top", "350px");
     }
-  }, 1000);
+  }, 1600);
 
   setTimeout(function() {
     if(shotStarted === false) {
       playerIdleAnimation();
     }
-  }, 1250);
+  }, 2000);
 }
