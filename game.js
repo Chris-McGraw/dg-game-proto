@@ -62,7 +62,8 @@ $(document).ready(function() {
 
   var $obZone = $("#ob-zone-0");
 
-  var $notificationContainer = $("#notification-container");
+  var $notificationContainerOB = $("#notification-container-ob");
+  var $notificationContainerAce = $("#notification-container-ace");
 
   var $previewPointerContainer = $("#preview-pointer-container");
   var $shotPreviewPointerTop = $("#shot-preview-pointer-top");
@@ -277,7 +278,7 @@ $(document).ready(function() {
     $disc.addClass("hidden");
     $discShadow.css("visibility", "hidden");
 
-    $notificationContainer.addClass("notification-popup");
+    $notificationContainerOB.addClass("notification-popup");
 
     setTimeout(function() {
       $discShadow.removeClass("player-drive-movement");
@@ -440,6 +441,7 @@ $(document).ready(function() {
               $discShadow.addClass("hidden");
               $basket.attr("src", basketMadeDiscImg);
               chainHitAudio.play();
+              $notificationContainerAce.addClass("notification-popup");
             }, 2200);
           }
 
@@ -523,7 +525,8 @@ $(document).ready(function() {
       $disc.removeAttr("style");
       $disc.removeClass("player-drive-movement");
 
-      $notificationContainer.removeClass("notification-popup");
+      $notificationContainerOB.removeClass("notification-popup");
+      $notificationContainerAce.removeClass("notification-popup");
 
       $discWaterSplash.addClass("hidden");
       $discShadow.css("visibility", "visible");
