@@ -683,7 +683,7 @@ $(document).ready(function() {
 
 /* ---------------------------- Event Handlers ---------------------------- */
 
-  /* shotPreviewBlink(); */
+  shotPreviewBlink();
 
   if(shotStarted === false) {
     playerIdleAnimation();
