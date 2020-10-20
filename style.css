@@ -7,6 +7,19 @@
   /* border: 2px solid red; */
 }
 
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  zoom: 120%;
+}
+
 .hidden {
   display: none;
 }
@@ -352,9 +365,15 @@
   opacity: 0.7;
 }
 
+#main-container {
+  position: relative;
+
+  width: auto;
+  height: auto;
+}
+
 #screen-container {
-  position: absolute;
-  top: 50px;
+  position: relative;
   left: 0;
   right: 0;
 
@@ -716,27 +735,25 @@
 }
 
 #instruction-container {
-  position: absolute;
-  top: 530px;
+  position: relative;
   left: 0;
   right: 0;
 
   width: 508px;
-  height: 120px;
+  height: 100%;
   margin: auto;
 
-  /* border: 1px solid black;
-  border-radius: 10px; */
+  /* border: 1px solid black; */
 }
 
 #instruction-text {
-  position: absolute;
-  top: 10px;
+  position: relative;
   left: 0;
   right: 0;
 
   width: 380px;
   margin: auto;
+  padding-top: 20px;
 
   text-align: center;
   font-family: "VT323", monospace;
